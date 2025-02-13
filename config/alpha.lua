@@ -16,7 +16,7 @@ dashboard.section.header.val = {
     "  \\ \\_) (o)   /     / /___/ / / /  __/  __/ / /_/ /_/ /| |/ / / / / / / /",
     "   \\/________/      \\____/_/ /_/\\___/\\___/ /___/\\__, / |___/_/_/ /_/ /_/ ",
     "                                               /____/                    ",
-    -- ASCII art by mic
+    -- ASCII cheese by mic
 }
 
 dashboard.section.buttons.val = {

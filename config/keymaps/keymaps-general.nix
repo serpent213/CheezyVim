@@ -10,6 +10,7 @@
       key = "<leader>w";
       action = ":w<CR>";
       options = {
+        desc = "Write file";
         noremap = true;
         silent = true;
       };

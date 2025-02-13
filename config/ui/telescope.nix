@@ -69,10 +69,6 @@
       project = {
         enable = pkgs.lib.mkDefault true;
         settings = {
-          base_dirs = [
-            "~/Documents/213tec"
-            "~/Documents/projects"
-          ];
           on_project_selected = {
             __raw = ''
               function(prompt_bufnr)
@@ -97,6 +93,10 @@
         action = "live_grep";
         options.desc = "Search Text";
       };
+      # "<leader>g" = {
+      #   action = "buffers";
+      #   options.desc = "Buffers";
+      # };
     };
   };
 }
