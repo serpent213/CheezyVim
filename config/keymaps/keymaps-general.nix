@@ -1,9 +1,56 @@
 {
   config.globals = {
-    mapleader = " ";
-    maplocalleader = " ";
+    mapleader = ",";
+    maplocalleader = ",";
   };
   config.keymaps = [
+    # Global/generic
+    {
+      mode = "n";
+      key = "<leader>w";
+      action = ":w<CR>";
+      options = {
+        noremap = true;
+        silent = true;
+      };
+    }
+
+    {
+      mode = "n";
+      key = "<leader>p";
+      action = ":lua require'telescope'.extensions.project.project{}<CR>";
+      options = {
+        noremap = true;
+        silent = true;
+      };
+    }
+
+    # Shift no worky worky...?
+    {
+      mode = "n";
+      key = "<D-[>";
+      action = ":bprevious<CR>";
+    }
+    {
+      mode = "n";
+      key = "<D-]>";
+      action = ":bnext<CR>";
+    }
+
+    # More JeezyVim overrides
+    # LSP
+    {
+      # Custom fn from extra_lua.nix which works like IntelliJ
+      action = "<cmd>ToggleDefinition<cr>";
+      key = "<leader>B";
+      mode = "n";
+      options = {
+        noremap = true;
+        silent = true;
+        desc = "Go To Definition / Finder";
+      };
+    }
+
     {
       mode = "";
       key = "<Space>";
@@ -12,24 +59,6 @@
         noremap = true;
         silent = true;
       };
-    }
-
-    {
-      action = ":bnext<cr>";
-      key = "<C-]>";
-      mode = "n";
-    }
-
-    {
-      action = "o<Esc>";
-      key = "o";
-      mode = "n";
-    }
-
-    {
-      action = "O<Esc>";
-      key = "O";
-      mode = "n";
     }
 
     {

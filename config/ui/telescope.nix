@@ -66,6 +66,27 @@
         enable = pkgs.lib.mkDefault true;
         settings.useDelta = pkgs.lib.mkDefault true;
       };
+      project = {
+        enable = pkgs.lib.mkDefault true;
+        settings = {
+          base_dirs = [
+            "~/Documents/213tec"
+            "~/Documents/projects"
+          ];
+          on_project_selected = {
+            __raw = ''
+              function(prompt_bufnr)
+                require("telescope._extensions.project.actions").change_working_directory(prompt_bufnr, false)
+                -- require("harpoon.ui").nav_file(1)
+              end
+            '';
+          };
+          order_by = "asc";
+          search_by = "title";
+          sync_with_nvim_tree = true;
+          theme = "dropdown";
+        };
+      };
     };
     keymaps = {
       "<leader>f" = {

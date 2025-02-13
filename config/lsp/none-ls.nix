@@ -19,6 +19,7 @@
         dotenv_linter.enable = pkgs.lib.mkDefault true;
         deadnix.enable = pkgs.lib.mkDefault true;
         trail_space.enable = pkgs.lib.mkDefault true;
+        # biome.enable = pkgs.lib.mkDefault true;
       };
 
       formatting = {
@@ -30,9 +31,8 @@
         rubyfmt.enable = pkgs.lib.mkDefault pkgs.stdenv.isLinux;
         black.enable = pkgs.lib.mkDefault true;
         isort.enable = pkgs.lib.mkDefault true;
-        prettier.enable = pkgs.lib.mkDefault true;
-        prettier.disableTsServerFormatter = pkgs.lib.mkDefault true;
         typstfmt.enable = pkgs.lib.mkDefault true;
+        biome.enable = pkgs.lib.mkDefault true;
       };
     };
   };

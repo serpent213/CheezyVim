@@ -1,24 +1,28 @@
 {pkgs, ...}: {
-  plugins.lsp = {
-    enable = pkgs.lib.mkDefault true;
+  plugins.lsp = with pkgs.lib; {
+    enable = mkDefault true;
     servers = {
-      bashls.enable = pkgs.lib.mkDefault true;
-      dockerls.enable = pkgs.lib.mkDefault true;
-      gopls.enable = pkgs.lib.mkDefault true;
-      jsonls.enable = pkgs.lib.mkDefault true;
-      marksman.enable = pkgs.lib.mkDefault true;
-      nil_ls.enable = pkgs.lib.mkDefault true;
-      pyright.enable = pkgs.lib.mkDefault true;
-      ts_ls.enable = pkgs.lib.mkDefault true;
-      lua_ls.enable = pkgs.lib.mkDefault true;
-      tailwindcss.enable = pkgs.lib.mkDefault true;
-      tinymist.enable = pkgs.lib.mkDefault true;
-      cssls.enable = pkgs.lib.mkDefault true;
-      html.enable = pkgs.lib.mkDefault true;
-      htmx.enable = pkgs.lib.mkDefault true;
-      solargraph.enable = pkgs.lib.mkDefault true;
-      yamlls.enable = pkgs.lib.mkDefault true;
-      taplo.enable = pkgs.lib.mkDefault true;
+      bashls.enable = mkDefault true;
+      biome.enable = mkDefault true;
+      cssls.enable = mkDefault true;
+      dockerls.enable = mkDefault true;
+      elixirls.enable = mkDefault true;
+      # elixirls.package = pkgs.elixir-ls;
+      gopls.enable = mkDefault true;
+      html.enable = mkDefault true;
+      htmx.enable = mkDefault true;
+      jsonls.enable = mkDefault true;
+      lua_ls.enable = mkDefault true;
+      marksman.enable = mkDefault true;
+      nil_ls.enable = mkDefault true;
+      pylsp.enable = mkDefault true;
+      pyright.enable = mkDefault true;
+      solargraph.enable = mkDefault true;
+      tailwindcss.enable = mkDefault true;
+      taplo.enable = mkDefault true;
+      tinymist.enable = mkDefault true;
+      ts_ls.enable = mkDefault true;
+      yamlls.enable = mkDefault true;
     };
   };
 

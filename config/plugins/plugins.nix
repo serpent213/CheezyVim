@@ -1,17 +1,19 @@
 {pkgs, ...}: {
-  plugins = {
+  plugins = with pkgs.lib; {
+    direnv.enable = mkDefault true;
+    markdown-preview.enable = mkDefault false;
     nvim-autopairs = {
-      enable = pkgs.lib.mkDefault true;
-      settings.checkTs = pkgs.lib.mkDefault true;
+      enable = mkDefault true;
+      settings.checkTs = mkDefault true;
     };
-    crates.enable = pkgs.lib.mkDefault true;
-    bacon.enable = pkgs.lib.mkDefault true;
-    rustaceanvim.enable = pkgs.lib.mkDefault true;
-    lastplace.enable = pkgs.lib.mkDefault true;
+    crates.enable = mkDefault true;
+    bacon.enable = mkDefault true;
+    rustaceanvim.enable = mkDefault true;
+    lastplace.enable = mkDefault true;
     todo-comments = {
-      enable = pkgs.lib.mkDefault true;
+      enable = mkDefault true;
       settings = {
-        mergeKeywords = pkgs.lib.mkDefault true;
+        mergeKeywords = mkDefault true;
         highlight = {
           before = "";
           after = "fg";
@@ -22,41 +24,41 @@
         };
       };
     };
-    comment.enable = pkgs.lib.mkDefault true;
-    sleuth.enable = pkgs.lib.mkDefault true;
+    comment.enable = mkDefault true;
+    sleuth.enable = mkDefault true;
     nvim-tree = {
-      enable = pkgs.lib.mkDefault true;
-      updateFocusedFile.enable = pkgs.lib.mkDefault true;
+      enable = mkDefault true;
+      updateFocusedFile.enable = mkDefault true;
     };
     toggleterm = {
-      enable = pkgs.lib.mkDefault true;
+      enable = mkDefault true;
       settings = {
         direction = "float";
         floatOpts = {border = "single";};
-        terminalMappings = pkgs.lib.mkDefault true;
+        terminalMappings = mkDefault true;
       };
     };
     illuminate = {
-      enable = pkgs.lib.mkDefault true;
-      underCursor = pkgs.lib.mkDefault true;
+      enable = mkDefault true;
+      underCursor = mkDefault true;
     };
     navic = {
-      enable = pkgs.lib.mkDefault true;
+      enable = mkDefault true;
       settings = {
-        highlight = pkgs.lib.mkDefault true;
-        lsp.autoAttach = pkgs.lib.mkDefault true;
+        highlight = mkDefault true;
+        lsp.autoAttach = mkDefault true;
       };
     };
-    colorizer.enable = pkgs.lib.mkDefault true;
-    marks.enable = pkgs.lib.mkDefault true;
+    colorizer.enable = mkDefault true;
+    marks.enable = mkDefault true;
     vim-matchup = {
-      enable = pkgs.lib.mkDefault true;
-      settings = pkgs.lib.mkDefault {
-        surround_enabled = pkgs.lib.mkDefault 1;
-        transmute_enabled = pkgs.lib.mkDefault 1;
+      enable = mkDefault true;
+      settings = mkDefault {
+        surround_enabled = mkDefault 1;
+        transmute_enabled = mkDefault 1;
       };
-      treesitter = pkgs.lib.mkDefault {
-        enable = pkgs.lib.mkDefault true;
+      treesitter = mkDefault {
+        enable = mkDefault true;
       };
     };
     web-devicons.enable = true;
