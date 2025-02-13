@@ -3,5 +3,5 @@
     alpha-nvim
   ];
 
-  extraConfigLua = builtins.readFile ./alpha.lua;
+  # extraConfigLua = builtins.readFile ./alpha.lua;
 }
