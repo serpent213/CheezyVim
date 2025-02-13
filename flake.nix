@@ -1,5 +1,5 @@
 {
-  description = "JeezyVim";
+  description = "CheezyVim";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -46,19 +46,19 @@
           extraSpecialArgs = {
           };
         };
-        jeezyvim = nixvim'.makeNixvimWithModule nixvimModule;
+        cheezyvim = nixvim'.makeNixvimWithModule nixvimModule;
       in {
         checks = {
           default = nixvimLib.check.mkTestDerivationFromNixvimModule nixvimModule;
         };
 
         packages = {
-          inherit jeezyvim;
-          default = jeezyvim;
+          inherit cheezyvim;
+          default = cheezyvim;
         };
 
         overlayAttrs = {
-          inherit (config.packages) jeezyvim;
+          inherit (config.packages) cheezyvim;
         };
       };
     };
