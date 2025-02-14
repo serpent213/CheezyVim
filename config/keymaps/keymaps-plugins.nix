@@ -24,6 +24,10 @@
       };
     }
 
+    # AI
+    # {
+    # }
+
     # LSP
     {
       # Custom fn from extra_lua.nix which works like IntelliJ

@@ -6,9 +6,7 @@
       enable = mkDefault true;
       settings.checkTs = mkDefault true;
     };
-    crates.enable = mkDefault true;
     bacon.enable = mkDefault true;
-    rustaceanvim.enable = mkDefault true;
     lastplace.enable = mkDefault true;
     todo-comments = {
       enable = mkDefault true;

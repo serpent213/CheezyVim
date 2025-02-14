@@ -1,6 +1,7 @@
 {
   # Import all your configuration modules here
   imports = [
+    ./ai
     ./alpha.nix
     ./autocmds.nix
     ./bufferline.nix
