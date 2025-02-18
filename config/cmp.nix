@@ -11,6 +11,7 @@
       enable = pkgs.lib.mkDefault true;
       autoEnableSources = pkgs.lib.mkDefault true;
       settings = {
+        completion.autocomplete = false;
         snippet.expand = "function(args) require('luasnip').lsp_expand(args.body) end";
 
         sources = [
@@ -20,6 +21,7 @@
           {name = "buffer";}
           {name = "git";}
           {name = "calc";}
+          {name = "copilot";}
         ];
 
         mapping = {
@@ -32,6 +34,15 @@
           "<C-b>" = "cmp.mapping.scroll_docs(-4)";
           "<CR>" = "cmp.mapping.confirm({ select = true })";
         };
+      };
+    };
+
+    # Enable icons
+    lspkind = {
+      enable = true;
+      cmp.enable = true;
+      symbolMap = {
+        Copilot = "";
       };
     };
   };

@@ -21,6 +21,7 @@ end
 vim.api.nvim_create_user_command("Q", "qa", { bang = true })
 vim.api.nvim_create_user_command("Dnovt", "lua vim.diagnostic.config({ virtual_text = false })", {})
 vim.api.nvim_create_user_command("Dvt", "lua vim.diagnostic.config({ virtual_text = true })", {})
+vim.api.nvim_create_user_command("Map", "Telescope keymaps", {})
 vim.api.nvim_create_user_command("ToggleDefinition", toggle_definition, {})
 
 if string.match(vim.loop.os_uname().release, "WSL2") then
