@@ -3,7 +3,7 @@
     direnv.enable = mkDefault true;
     markdown-preview.enable = mkDefault false;
     nvim-autopairs = {
-      enable = mkDefault true;
+      enable = mkDefault false;
       settings.checkTs = mkDefault true;
     };
     bacon.enable = mkDefault true;
