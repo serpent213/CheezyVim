@@ -26,5 +26,12 @@
     };
   };
 
-  plugins.lsp-format.enable = pkgs.lib.mkDefault true;
+  plugins.lsp-format = {
+    enable = pkgs.lib.mkDefault true;
+    # settings = {
+    #   elixir = {
+    #     order = ["elixirls"];
+    #   };
+    # };
+  };
 }
