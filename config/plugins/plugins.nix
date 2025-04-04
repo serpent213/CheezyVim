@@ -28,6 +28,7 @@
       enable = mkDefault true;
       updateFocusedFile.enable = mkDefault true;
     };
+    nvim-ufo.enable = mkDefault true;
     toggleterm = {
       enable = mkDefault true;
       settings = {
