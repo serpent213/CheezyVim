@@ -5,7 +5,9 @@
       callback = {
         __raw = ''
           function()
-              vim.cmd "set formatoptions-=cro"
+              -- Disable comment continuations
+              -- vim.cmd "set formatoptions-=cro"
+              vim.cmd ":TSBufEnable highlight"
           end
         '';
       };

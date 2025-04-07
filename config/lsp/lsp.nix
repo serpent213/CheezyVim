@@ -17,8 +17,72 @@
       nil_ls.enable = mkDefault true;
       pylsp.enable = mkDefault true;
       pyright.enable = mkDefault true;
-      solargraph.enable = mkDefault true;
-      tailwindcss.enable = mkDefault true;
+      tailwindcss = {
+        enable = mkDefault true;
+        # filetypes = [
+        #   "clojure"
+        #   "css"
+        #   "django-html"
+        #   "eelixir"
+        #   "ejs"
+        #   "elixir"
+        #   "gohtml"
+        #   "gohtmltmpl"
+        #   "haml"
+        #   "handlebars"
+        #   "heex"
+        #   "html"
+        #   "html-eex"
+        #   "htmldjango"
+        #   "javascript"
+        #   "javascriptreact"
+        #   "js"
+        #   "jsx"
+        #   "less"
+        #   "mdx"
+        #   "mustache"
+        #   "php"
+        #   "postcss"
+        #   "sass"
+        #   "scss"
+        #   "stylus"
+        #   "svelte"
+        #   "ts"
+        #   "tsx"
+        #   "typescript"
+        #   "typescriptreact"
+        # ];
+        # extraOptions = {
+        #   init_options = {
+        #     userLanguages = {
+        #       elixir = "html-eex";
+        #       eelixir = "html-eex";
+        #       heex = "html-eex";
+        #     };
+        #   };
+        # };
+        # settings = {
+        #   tailwindCSS = {
+        #     classAttributes = [
+        #       "class"
+        #       "className"
+        #       "class:list"
+        #       "classList"
+        #       "ngClass"
+        #     ];
+        #     experimental = {
+        #       classRegex = ''class[:]\s*"([^"]*)"'';
+        #     };
+        #   };
+        # };
+        # onAttach = {
+        #   override = true;
+        #   function = ''
+        #     client.server_capabilities.documentFormattingProvider = false
+        #     client.server_capabilities.documentRangeFormattingProvider = false
+        #   '';
+        # };
+      };
       taplo.enable = mkDefault true;
       tinymist.enable = mkDefault true;
       ts_ls.enable = mkDefault true;
