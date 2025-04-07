@@ -49,6 +49,10 @@
       };
     };
     colorizer.enable = mkDefault true;
+    gitsigns = {
+      enable = mkDefault true;
+      autoLoad = mkDefault true;
+    };
     marks.enable = mkDefault true;
     vim-matchup = {
       enable = mkDefault true;
