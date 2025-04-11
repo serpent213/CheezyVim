@@ -19,6 +19,7 @@
       pyright.enable = mkDefault true;
       tailwindcss = {
         enable = mkDefault true;
+        # from https://github.com/MatthiasBenaets/nix-config/blob/master/modules/editors/nvim.nix#L480
         # filetypes = [
         #   "clojure"
         #   "css"
