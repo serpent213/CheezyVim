@@ -23,7 +23,17 @@
       formatting = {
         stylua.enable = pkgs.lib.mkDefault true;
         alejandra.enable = pkgs.lib.mkDefault true;
-        shfmt.enable = pkgs.lib.mkDefault true;
+        shfmt = {
+          enable = pkgs.lib.mkDefault true;
+          settings = {
+            extra_args = [
+              "-i"
+              "4" # 4 spaces
+              "-ci" # case indent
+              "-sr" # space redirects
+            ];
+          };
+        };
         gofmt.enable = pkgs.lib.mkDefault true;
         black.enable = pkgs.lib.mkDefault true;
         isort.enable = pkgs.lib.mkDefault true;
