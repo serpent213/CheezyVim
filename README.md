@@ -111,6 +111,10 @@ keymaps](./config/keymaps/keymaps-plugins.nix) discoverable.
 There are a handful of shortcuts that I consider my superpowers in JetBrains
 IDEs which I have made LSP-equivalents for in this configuration.
 
+- `,e` to toggle NvimTree, which when opening, will jump to the file in
+  the current buffer
+- `,s` to live grep
+- `,f` to search through git-tracked files
 - `,,` to rename whatever is under the cursor - trust me, this is the best
   shortcut I've ever made
 - `,b` to peek at the definition of whatever is under the cursor
@@ -119,7 +123,8 @@ IDEs which I have made LSP-equivalents for in this configuration.
 - `<C-t>` to toggle in and out of the terminal; if the terminal line is
   focused, you can hit `<Esc>` to switch to normal mode in the terminal and
   then `<C-t>` again to hide it
-- `<Space>e` to toggle NvimTree, which when opening, will jump to the file in
-  the current buffer
-- `<Space>s` to live grep
-- `<Space>f` to search through git-tracked files
+
+## Some custom tools
+
+- `,yf` to yank the relative filepath of the current buffer to clipboard
+- `,yF` to yank the absolute filepath of the current buffer to clipboard

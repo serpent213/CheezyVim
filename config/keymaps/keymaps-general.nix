@@ -296,5 +296,27 @@
         desc = "Paste without yanking";
       };
     }
+
+    # Yank filepath
+    {
+      action = ":let @+ = expand('%')<CR>";
+      key = "<leader>yf";
+      mode = "n";
+      options = {
+        noremap = true;
+        silent = true;
+        desc = "Yank relative filepath to clipboard";
+      };
+    }
+    {
+      action = ":let @+ = expand('%:p')<CR>";
+      key = "<leader>yF";
+      mode = "n";
+      options = {
+        noremap = true;
+        silent = true;
+        desc = "Yank absolute filepath to clipboard";
+      };
+    }
   ];
 }
