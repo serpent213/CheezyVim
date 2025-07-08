@@ -10,7 +10,7 @@
       # elixirls.package = pkgs.elixir-ls;
       gopls.enable = mkDefault true;
       html.enable = mkDefault true;
-      htmx.enable = mkDefault true;
+      # htmx.enable = mkDefault true;
       jsonls.enable = mkDefault true;
       lua_ls.enable = mkDefault true;
       marksman.enable = mkDefault true;
