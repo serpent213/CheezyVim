@@ -6,8 +6,14 @@
       biome.enable = mkDefault true;
       cssls.enable = mkDefault true;
       dockerls.enable = mkDefault true;
-      elixirls.enable = mkDefault true;
-      # elixirls.package = pkgs.elixir-ls;
+      elixirls = {
+        enable = mkDefault true;
+        # package = pkgs.elixir-ls;
+        onAttach.function = ''
+          -- Disable semantic tokens for all LSP servers
+          client.server_capabilities.semanticTokensProvider = nil
+        '';
+      };
       gopls.enable = mkDefault true;
       html.enable = mkDefault true;
       # htmx.enable = mkDefault true;
