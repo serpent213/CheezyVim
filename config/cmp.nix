@@ -41,7 +41,7 @@
     lspkind = {
       enable = true;
       cmp.enable = true;
-      symbolMap = {
+      settings.symbol_map = {
         Copilot = "";
       };
     };
