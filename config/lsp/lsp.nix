@@ -9,10 +9,14 @@
       elixirls = {
         enable = mkDefault true;
         # package = pkgs.elixir-ls;
-        onAttach.function = ''
-          -- Disable semantic tokens for all LSP servers
-          client.server_capabilities.semanticTokensProvider = nil
-        '';
+        settings = {
+          # MCP Server settings
+          mcpEnabled = true;
+        };
+        # onAttach.function = ''
+        #   -- Disable semantic tokens for all LSP servers
+        #   client.server_capabilities.semanticTokensProvider = nil
+        # '';
       };
       gopls.enable = mkDefault true;
       html.enable = mkDefault true;
