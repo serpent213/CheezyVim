@@ -21,7 +21,7 @@
           {name = "buffer";}
           {name = "git";}
           {name = "calc";}
-          {name = "copilot";}
+          # {name = "copilot";}
         ];
 
         mapping = {
@@ -41,9 +41,9 @@
     lspkind = {
       enable = true;
       cmp.enable = true;
-      settings.symbol_map = {
-        Copilot = "";
-      };
+      # settings.symbol_map = {
+      #   Copilot = "";
+      # };
     };
   };
 }

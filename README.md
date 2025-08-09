@@ -4,7 +4,7 @@ CheezyVim is a declarative NeoVim configuration built with
 [NixVim](https://github.com/nix-community/nixvim), forked from
 [JeezyVim](https://github.com/LGUG2Z/JeezyVim).
 
-Includes Elixir LS, Avante and Copilot.
+Includes Elixir LS, Avante and Copilot (the latter is currently disabled).
 
 ## Usage and Installation
 

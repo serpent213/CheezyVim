@@ -1,6 +1,6 @@
 {
   imports = [
     ./avante.nix
-    ./copilot.nix
+    # ./copilot.nix
   ];
 }
