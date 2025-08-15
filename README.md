@@ -128,3 +128,38 @@ IDEs which I have made LSP-equivalents for in this configuration.
 
 - `,yf` to yank the relative filepath of the current buffer to clipboard
 - `,yF` to yank the absolute filepath of the current buffer to clipboard
+
+## Per-workspace RPC sockets
+
+CheezyVim can automatically start RPC servers on Unix domain sockets for Neovim remote control on a per-git-repository basis. When enabled, Neovim will listen on a socket at `/tmp/nvim-rpc.{project_name}.{pid}.sock` for each git repository.
+
+To enable this feature:
+
+```nix
+{pkgs, ...}: {
+  home.packages = [
+    (pkgs.cheezyvim.nixvimExtend {
+      config = {
+        globals = {
+          open_rpc_pipe_per_workspace = true;
+        };
+      };
+    })
+  ];
+}
+```
+
+The socket path is generated based on:
+- **Project name** (last part of git root directory, or current working directory if not in a git repo)
+- **Process ID** to avoid conflicts between multiple Neovim instances
+- **Path escaping** to handle special characters safely
+
+The RPC socket allows external tools to send commands to the specific Neovim instance using the msgpack-rpc protocol. For example:
+
+```bash
+# For a project called "myproject" with PID 12345
+# Send a command to the project-specific Neovim instance
+nvim --server /tmp/nvim-rpc.myproject.12345.sock --remote-expr "vim.cmd('echo \"Hello from external tool!\"')"
+```
+
+This can be used in combination with tools like [nvim-mcp](https://github.com/linw1995/nvim-mcp) for advanced integrations.

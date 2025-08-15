@@ -1,9 +1,12 @@
-{
+{pkgs, ...}: {
   config = {
     clipboard = {
       register = "unnamedplus";
     };
     editorconfig.enable = true;
+    globals = {
+      open_rpc_pipe_per_workspace = pkgs.lib.mkDefault false;
+    };
     opts = {
       termguicolors = true;
       showmode = false;
