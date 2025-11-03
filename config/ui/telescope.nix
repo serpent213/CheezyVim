@@ -67,7 +67,8 @@
         settings.useDelta = pkgs.lib.mkDefault true;
       };
       project = {
-        enable = pkgs.lib.mkDefault true;
+        enable = false;
+        # enable = pkgs.lib.mkDefault true;
         settings = {
           on_project_selected = {
             __raw = ''

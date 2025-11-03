@@ -39,7 +39,7 @@
     };
     illuminate = {
       enable = mkDefault true;
-      underCursor = mkDefault true;
+      settings.under_cursor = mkDefault true;
     };
     navic = {
       enable = mkDefault true;
