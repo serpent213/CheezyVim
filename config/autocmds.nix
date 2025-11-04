@@ -144,5 +144,30 @@
         '';
       };
     }
+    {
+      event = ["BufRead" "BufNewFile"];
+      pattern = ["*.pcss"];
+      callback = {
+        __raw = ''
+          function()
+            vim.bo.filetype = "css"
+          end
+        '';
+      };
+    }
+    {
+      event = ["BufRead" "BufNewFile"];
+      pattern = ["*.fusion"];
+      callback = {
+        __raw = ''
+          function()
+            vim.bo.shiftwidth = 4
+            vim.bo.tabstop = 4
+            vim.bo.softtabstop = 4
+            vim.bo.expandtab = true
+          end
+        '';
+      };
+    }
   ];
 }
