@@ -62,16 +62,6 @@
       };
     }
     {
-      action = "<cmd>Telescope diagnostics theme=dropdown<cr>";
-      key = "<leader>d";
-      mode = "n";
-      options = {
-        noremap = true;
-        silent = true;
-        desc = "Diagnostics";
-      };
-    }
-    {
       action = "<cmd>Lspsaga diagnostic_jump_next<CR>";
       key = "]d";
       mode = "n";
@@ -119,6 +109,28 @@
         noremap = true;
         silent = true;
         desc = "Project-wide Rename";
+      };
+    }
+
+    # Telescope
+    {
+      action = "<cmd>Telescope buffers<cr>";
+      key = "C-s";
+      mode = "n";
+      options = {
+        noremap = true;
+        silent = true;
+        desc = "List buffers";
+      };
+    }
+    {
+      action = "<cmd>Telescope diagnostics theme=dropdown<cr>";
+      key = "<leader>d";
+      mode = "n";
+      options = {
+        noremap = true;
+        silent = true;
+        desc = "Diagnostics";
       };
     }
 
