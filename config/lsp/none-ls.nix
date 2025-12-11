@@ -37,7 +37,7 @@
         gofmt.enable = pkgs.lib.mkDefault true;
         black.enable = pkgs.lib.mkDefault true;
         isort.enable = pkgs.lib.mkDefault true;
-        typstfmt.enable = pkgs.lib.mkDefault true;
+        typstyle.enable = pkgs.lib.mkDefault true;
         biome.enable = pkgs.lib.mkDefault true;
       };
     };
