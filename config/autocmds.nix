@@ -7,7 +7,10 @@
           function()
               -- Disable comment continuations
               -- vim.cmd "set formatoptions-=cro"
-              vim.cmd ":TSBufEnable highlight"
+              -- Enable treesitter highlighting for the buffer. nvim-treesitter's
+              -- `main` rewrite dropped :TSBufEnable, so use the core API. pcall
+              -- guards filetypes without an installed parser.
+              pcall(vim.treesitter.start)
           end
         '';
       };
@@ -20,7 +23,7 @@
       callback = {
         __raw = ''
           function()
-            vim.cmd ":TSDisable highlight"
+            pcall(vim.treesitter.stop)
           end
         '';
       };
