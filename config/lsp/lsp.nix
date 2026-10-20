@@ -23,7 +23,10 @@
       # htmx.enable = mkDefault true;
       jsonls.enable = mkDefault true;
       lua_ls.enable = mkDefault true;
-      marksman.enable = mkDefault true;
+      markdown_oxide = {
+        enable = mkDefault true;
+        extraOptions.capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true;
+      };
       nil_ls.enable = mkDefault true;
       pylsp.enable = mkDefault true;
       pyright.enable = mkDefault true;

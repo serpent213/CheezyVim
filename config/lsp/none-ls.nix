@@ -9,7 +9,20 @@
       diagnostics = {
         stylelint.enable = pkgs.lib.mkDefault true;
         statix.enable = pkgs.lib.mkDefault true;
-        sqlfluff.enable = pkgs.lib.mkDefault true;
+        sqlfluff = {
+          enable = pkgs.lib.mkDefault true;
+          package = pkgs.sqlfluff.override {
+            python3Packages = pkgs.python3Packages // {
+              diff-cover = pkgs.python3Packages.diff-cover.overridePythonAttrs (old: {
+                # Pygments 2.21 no longer escapes quotes in HTML text nodes.
+                postPatch = (old.postPatch or "") + ''
+                  substituteInPlace tests/fixtures/{pycodestyle,pyflakes,pylint}_violations_report.html \
+                    --replace-fail '&quot;' '"'
+                '';
+              });
+            };
+          };
+        };
         pylint.enable = pkgs.lib.mkDefault true;
         mypy.enable = pkgs.lib.mkDefault true;
         markdownlint.enable = pkgs.lib.mkDefault true;

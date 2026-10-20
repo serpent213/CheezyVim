@@ -25,7 +25,6 @@
       systems = [
         "x86_64-linux"
         "aarch64-linux"
-        "x86_64-darwin"
         "aarch64-darwin"
       ];
 
@@ -47,18 +46,24 @@
           };
         };
         cheezyvim = nixvim'.makeNixvimWithModule nixvimModule;
+        lightModule = nixvimModule // {
+          module.imports = [./config ./config/light.nix];
+        };
+        cheezyvim-light = nixvim'.makeNixvimWithModule lightModule;
       in {
         checks = {
           default = nixvimLib.check.mkTestDerivationFromNixvimModule nixvimModule;
+          light = nixvimLib.check.mkTestDerivationFromNixvimModule lightModule;
         };
 
         packages = {
-          inherit cheezyvim;
+          inherit cheezyvim cheezyvim-light;
           default = cheezyvim;
+          light = cheezyvim-light;
         };
 
         overlayAttrs = {
-          inherit (config.packages) cheezyvim;
+          inherit (config.packages) cheezyvim cheezyvim-light;
         };
       };
     };

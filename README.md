@@ -30,6 +30,35 @@ templates](https://github.com/search?q=owner%3ALGUG2Z+nixos&type=repositories),
 you would add this to the `overlays` list in the `nixpkgsWithOverlays` function
 in `flake.nix`.
 
+## Light package
+
+For non-development machines, the light package keeps the same UI, keybindings,
+search, and Git integration, with a smaller selection of language tools and parsers:
+
+```bash
+nix run github:serpent213/CheezyVim#light
+# From a local checkout:
+nix run .#light
+```
+
+Install `packages.<system>.cheezyvim-light`, or `pkgs.cheezyvim-light` through
+the overlay. The default package remains the full configuration.
+
+- Omits Go, Typst, Elixir, and Tailwind language servers and the Go/Typst formatters.
+- Keeps Python completion and type checking through Pyright; Ruff supplies linting,
+  formatting, and import organization. Running Python scripts requires a separately
+  installed system or project interpreter.
+- Omits pylsp, pylint, mypy, Black, isort, SQLFluff, Fish linting, and markdownlint.
+  Markdown retains its language server; Fish retains syntax highlighting.
+- Disables Python/Ruby plugin providers and uses `gitMinimal`.
+- Includes 36 Tree-sitter parsers for common configuration files, scripts, web files,
+  Git files, and Neovim itself. See [the light configuration](./config/light.nix)
+  for the exact selection.
+
+With the current lock file, the uncompressed runtime closure on Apple Silicon is
+approximately **906 MiB**, compared with **3.46 GiB** for the full package.
+Sizes vary by platform and dependency versions.
+
 ## Extending
 
 Is there a plugin or an LSP that you don't see enabled here, but you would like
