@@ -7,7 +7,7 @@
       fd
       ripgrep
     ]
-    ++ pkgs.lib.optionals pkgs.stdenv.isDarwin [
+    ++ pkgs.lib.optionals pkgs.stdenv.hostPlatform.isDarwin [
       # runtime dependencies
       gnused
     ];
